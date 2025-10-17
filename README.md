@@ -41,4 +41,4 @@ Mesmo sendo um projeto simples, ele marca o **início da minha jornada como dese
 ---
 
 ### 💬 Autor
-Desenvolvido com 💖 por **Davi Israel Quirino** 
+Desenvolvido por **Davi Israel Quirino** 
