@@ -1,0 +1,404 @@
+/* Paleta de cores inspirada em Demon Slayer:
+   Azul Escuro/Preto (#0f0a0a)
+   Vermelho/Bordô (#a00000) - Detalhes
+   Cinza Claro/Areia (#e8e8e8) - Texto
+   Verde Água/Menta (#3ab79a) - Destaque (Link/Active)
+*/
+
+/* Criação da box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui borda e padding no tamanho total dos elementos */
+}
+
+/* Corpo com tema Demon Slayer */
+body.demon-slayer-theme {
+    font-family: 'Jost', sans-serif;
+    line-height: 1.7;
+    color: #e8e8e8;
+    background-color: #0f0a0a; /* Fundo muito escuro */
+}
+
+/* Links padrão */
+a {
+    color: #3ab79a;
+    text-decoration: none;
+    transition: color 0.3s; /* Transição suave na troca de cor */
+}
+
+a:hover {
+    color: #a00000;
+}
+
+a:visited {
+    color: blue;
+}
+
+/* Acessibilidade - Esconde visualmente sem remover do leitor de tela */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*------------------------Cabeçalho e Navegação------------------------*/
+
+/* Cabeçalho principal */
+.main-header {
+    position: relative; /* Necessário para posicionar conteúdo sobre a imagem */
+    text-align: center;
+}
+
+/* Imagem de fundo do cabeçalho */
+.header-image {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6) grayscale(1); /* Deixa a imagem escurecida e em tons de cinza */
+}
+
+/* Conteúdo sobre a imagem do cabeçalho */
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza no meio */
+    z-index: 10; /* Garante que fique acima da imagem */
+    width: 100%;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Cria sombra no texto */
+}
+
+/* Título do filme */
+.movie-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #e8e8e8;
+    margin-bottom: 5px;
+}
+
+/* Subtítulo em vermelho */
+.subtitle {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #a00000; /* Cor de destaque */
+}
+
+/* Subtítulo alternativo branco */
+.subtitle_Castelo {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: white; /* Cor de destaque */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navegação principal */
+.main-nav {
+    background-color: #1c1c1c; /* Fundo ligeiramente mais claro que o body */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: sticky; /* Fixa no topo ao rolar */
+    top: 0;
+    z-index: 20;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Itens da barra de navegação */
+.main-nav li a {
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #e8e8e8;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.main-nav li a:hover {
+    background-color: #0f0a0a;
+    color: #3ab79a;
+}
+
+/* Indica a página ativa na navegação */
+.nav-active {
+    border-bottom: 3px solid #a00000 !important; /* Linha vermelha embaixo */
+    color: #3ab79a !important;
+}
+
+/* ----------------------- Conteúdo Principal ------------------------------*/
+.main-content {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+    background-color: #1c1c1c;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    color: gray;
+}
+
+/* Seções internas */
+section {
+    padding: 40px 0;
+}
+
+/* Títulos das seções */
+section h2 {
+    font-family: 'Jost', sans-serif;
+    color: #a00000;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 10px;
+}
+
+/* -------------------Estilo da Sinopse --------------------- (index.html) */
+
+/* Texto da sinopse */
+.filme-details p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Caixa de informações adicionais */
+.meta-data {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: #0f0a0a;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 1px solid #333;
+}
+
+.meta-data strong {
+    color: #3ab79a;
+    font-weight: 800;
+}
+
+/* ---------------------- Estilo do Elenco ---------------- (elenco.html) */
+
+/* Título da seção do elenco */
+.team-section h3 {
+    color: #e8e8e8;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-left: 5px solid #a00000;
+    padding-left: 10px;
+}
+
+/* Grade de personagens */
+.cast-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Card de cada membro do elenco */
+.cast-member {
+    text-align: center;
+    flex: 1 1 150px;
+    max-width: 180px;
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Foto do ator */
+.cast-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Imagem redonda */
+    object-fit: cover;
+    border: 3px solid #3ab79a;
+    margin-bottom: 10px;
+}
+
+/* Nome do ator */
+.actor-name {
+    font-weight: 700;
+    color: #3ab79a;
+    margin-bottom: 2px;
+}
+
+/* Nome do personagem */
+.character-name {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #e8e8e8;
+}
+
+/* Lista dos Hashiras */
+.hashira-list {
+    list-style: none;
+    padding-left: 0;
+    columns: 2; /* Divide em duas colunas no desktop */
+    column-gap: 40px;
+}
+
+.hashira-list li {
+    padding: 10px;
+    border-bottom: 1px dotted #444;
+}
+
+.hashira-list strong {
+    color: #a00000;
+    font-weight: 800;
+}
+
+/* Caixa com informações dos produtores */
+.produtores {
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: #2a2a2a;
+    border-left: 5px solid #3ab79a;
+    border-radius: 6px;
+}
+
+.produtores h3 {
+    color: #e8e8e8;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+/* Estilo dos extras (extras.html) */
+.extras-item {
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: #2a2a2a;
+    border-left: 5px solid #3ab79a;
+    border-radius: 6px;
+}
+
+.extras-item h3 {
+    color: #e8e8e8;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+/*------------------------------Curiosidades--------------------*/
+.curiosity-list {
+    margin-top: 15px;
+}
+
+.curiosity-list dt {
+    font-weight: 800;
+    color: #3ab79a;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.curiosity-list dd {
+    margin-left: 20px;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* --------------------------------Rodapé ------------------------------*/
+.main-footer {
+    background-color: #000000;
+    color: #888;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 5px solid #a00000;
+    font-size: 0.9em;
+}
+
+/* Estrutura interna do rodapé */
+.footer-info, .footer-links {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-info p {
+    margin: 5px 20px;
+}
+
+/* Links no rodapé */
+.footer-links a {
+    color: #e8e8e8;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: #3ab79a;
+}
+
+/* Aquele C no final */
+.copyright {
+    margin-top: 15px;
+    font-size: 0.8em;
+    color: #555;
+}
+
+/* -------------------------------- Responsividade --------------------------------*/
+@media (max-width: 768px) {
+
+    .movie-title {
+        font-size: 2.2em;
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 1.5em;
+    }
+
+    .header-image {
+        height: 250px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap; /* Quebra linha da navegação em telas menores */
+    }
+
+    .main-nav li a {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+
+    .meta-data {
+        flex-direction: column; /* Coloca os itens um abaixo do outro */
+        align-items: flex-start;
+    }
+
+    .meta-data p {
+        margin: 5px 0;
+    }
+
+    .hashira-list {
+        columns: 1; /* Mostra em uma coluna no celular */
+    }
+
+    .footer-info, .footer-links {
+        flex-direction: column;
+    }
+}
